@@ -1,3 +1,10 @@
-h1 {
-  background-color: blue;
+.thumbAlbum {
+  position: absolute;
+  left: 0;
+  width: 40%;
+}
+.detailAlbum {
+  position: absolute;
+  right: 0;
+  width: 60%;
 }

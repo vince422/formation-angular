@@ -1,0 +1,5 @@
+<article>
+  <h2>{{ album.title }}</h2>
+  <h3>{{ album.price | currency: 'EUR' }}</h3>
+  <img [src]="album.cover" [alt]="album.title">
+</article>
