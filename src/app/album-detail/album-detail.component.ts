@@ -8,8 +8,7 @@ import { Album } from '../album';
 })
 export class AlbumDetailComponent implements OnInit {
 
-  @Input()
-  album: Album;
+  @Input() album: Album;
 
   constructor() { }
 

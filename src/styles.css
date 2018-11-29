@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+app-album-thumb.selected div {
+  border-left: solid 10px mediumseagreen;
+  box-sizing: border-box;
+}

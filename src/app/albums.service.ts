@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Album } from './album';
 import { LoggerService } from './logger.service';
-import { Observable } from 'rxjs';
+// import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +22,8 @@ export class AlbumsService {
           this.albums.push(album);
         }
       })
-      .catch(err => {
-        console.log(err);
+      .catch(e => {
+        console.log(e);
       });
     // Version Observable
     /*this.http.get('assets/albums.json')

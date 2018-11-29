@@ -12,13 +12,13 @@ import { SERVER_URL_TOKEN } from './app.config';
 export class AppComponent {
   title = 'Boutique';
   albums: Album[];
-  currentAlbum: Album;
+  currentAlbum: Album = undefined;
+  lastAlbum: Album;
 
   constructor(albumsService: AlbumsService,
               private loggerService: LoggerService,
               @Inject(SERVER_URL_TOKEN) serverUrl: string) {
     this.albums = albumsService.albums;
-    this.currentAlbum = this.albums[0];
   }
 
   setCurrent(album: Album): void {
@@ -27,6 +27,12 @@ export class AppComponent {
 
   setCreated(album: Album): void {
     this.albums.push(album);
+    this.lastAlbum = this.currentAlbum;
     this.currentAlbum = album;
+  }
+
+  removeCreated(album: Album): void {
+    this.albums.splice(this.albums.indexOf(album), 1);
+    this.currentAlbum = this.lastAlbum;
   }
 }

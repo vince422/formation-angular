@@ -3,11 +3,13 @@
   <h1>
     {{ title }}
   </h1>
-  <app-album-create (albumCreated)="setCreated($event)"></app-album-create>
+  <app-album-create (albumCreated)="setCreated($event)"
+                    (albumRemoved)="removeCreated($event)"></app-album-create>
   <div class="thumbAlbum">
     <app-album-thumb *ngFor="let album of albums"
                      [album]="album"
-                     (albumSelected)="setCurrent($event)">
+                     (albumSelected)="setCurrent($event)"
+                     [class.selected]="album == currentAlbum">
     </app-album-thumb>
   </div>
   <div class="detailAlbum">

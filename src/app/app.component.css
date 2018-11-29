@@ -1,10 +1,12 @@
 .thumbAlbum {
   position: absolute;
   left: 0;
-  width: 40%;
+  width: 45%;
+  padding-left: 5%;
+  margin: auto;
 }
 .detailAlbum {
   position: absolute;
   right: 0;
-  width: 60%;
+  width: 55%;
 }
