@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Album } from './album';
+import { AlbumsService } from './albums.service';
+import { LoggerService } from './logger.service';
+import { SERVER_URL_TOKEN } from './app.config';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +11,22 @@ import { Album } from './album';
 })
 export class AppComponent {
   title = 'Boutique';
-  albums: Album[] = [];
+  albums: Album[];
   currentAlbum: Album;
 
-  constructor() {
-    this.albums.push({ title: 'U2', price: 15, cover: 'https://img.discogs.com/QkmchdYHqmsVULZsGGaYY_eW5jQ=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-786161-1215152956.jpeg.jpg' });
-    this.albums.push({ title: 'Pink Floyd', price: 20, cover: 'https://img.discogs.com/d1NBrfuCh9VKASs6cWjH0GJ_Ntk=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-575044-1355435867-7324.jpeg.jpg' });
-    this.albums.push({ title: 'Led Zeppelin', price: 20, cover: 'https://img.discogs.com/SmdalY-gOwtPuVv3FvW23ewg8b4=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1015465-1366311867-2785.jpeg.jpg' });
+  constructor(albumsService: AlbumsService,
+              private loggerService: LoggerService,
+              @Inject(SERVER_URL_TOKEN) serverUrl: string) {
+    this.albums = albumsService.albums;
+    this.currentAlbum = this.albums[0];
   }
 
   setCurrent(album: Album): void {
+    this.currentAlbum = album;
+  }
+
+  setCreated(album: Album): void {
+    this.albums.push(album);
     this.currentAlbum = album;
   }
 }

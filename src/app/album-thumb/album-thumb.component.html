@@ -1,4 +1,6 @@
-<article (click)="select()">
-  <h2>Album : {{ album.title }}</h2>
-  <h3>{{ album.price | currency: 'EUR' }}</h3>
-</article>
+<div class="card" (click)="select()">
+  <div class="container">
+    <h4><b>{{ album.performer }} - {{ album.title }}</b></h4>
+    <p>{{ album.price | currency: 'EUR' }}</p>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+[
+  {
+    "title": "War",
+    "performer": "U2",
+    "price": 15,
+    "cover": "https://img.discogs.com/QkmchdYHqmsVULZsGGaYY_eW5jQ=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-786161-1215152956.jpeg.jpg"
+  },
+  {
+    "title": "Echoes",
+    "performer": "Pink Floyd",
+    "price": 20,
+    "cover": "https://img.discogs.com/d1NBrfuCh9VKASs6cWjH0GJ_Ntk=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-575044-1355435867-7324.jpeg.jpg"
+  },
+  {
+    "title": "Led Zeppelin IV",
+    "performer": "Led Zeppelin",
+    "price": 18,
+    "cover": "https://img.discogs.com/SmdalY-gOwtPuVv3FvW23ewg8b4=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1015465-1366311867-2785.jpeg.jpg"
+  },
+  {
+    "title": "Technicolor Life",
+    "performer": "Ko Ko Mo",
+    "price": 12,
+    "cover": "https://img.discogs.com/AlDF_fXyifDnb7YgJkXoTEkXrpA=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-10413060-1496930980-1942.jpeg.jpg"
+  },
+  {
+    "title": "Stup Virus",
+    "performer": "Stupeflip",
+    "price": 20,
+    "cover": "https://img.discogs.com/o5yPOR_UC8TqVqOB7lLb0MRX-5g=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-9919722-1505859774-2660.jpeg.jpg"
+  }
+]

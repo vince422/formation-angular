@@ -1,0 +1,23 @@
+<form (submit)="create(albumForm)" #albumForm="ngForm">
+  <div>
+    <label for="album-create-title">Titre</label>
+    <input [(ngModel)]="newAlbum.title" type="text" id="album-create-title" name="title" #titleField="ngModel" pattern=".{2,}" required>
+    <p *ngIf="titleField.invalid && titleField.touched" class="error">Merci de mettre un titre de 2 caractères minimum.</p>
+  </div>
+  <div>
+    <label for="album-create-performer">Artiste</label>
+    <input [(ngModel)]="newAlbum.performer" type="text" id="album-create-performer" name="performer" #performerField="ngModel" required>
+    <p *ngIf="performerField.invalid && performerField.touched" class="error">Merci de mettre un artiste.</p>
+  </div>
+  <div>
+    <label for="album-create-price">Prix</label>
+    <input [(ngModel)]="newAlbum.price" type="number" id="album-create-price" min="0" name="price" #priceField="ngModel" required>
+    <p *ngIf="priceField.invalid && priceField.touched" class="error">Merci un montant de 0 minimum.</p>
+  </div>
+  <div>
+    <label for="album-create-cover">URL Image</label>
+    <input [(ngModel)]="newAlbum.cover" type="text" id="album-create-cover" name="cover" #coverField="ngModel" required>
+    <p *ngIf="coverField.invalid && coverField.touched" class="error">Merci une url valide.</p>
+  </div>
+  <button [disabled]="albumForm.form.invalid">Valider</button>
+</form>
