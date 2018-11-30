@@ -4,8 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule/*, MatFormFieldModule, MatInputModule*/ } from '@angular/material';
+import { MatButtonModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -34,10 +33,7 @@ const SECOND_CONFIG = new InjectionToken('Une deuxième config');
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    // BrowserAnimationsModule,
     MatButtonModule,
-    // MatFormFieldModule,
-    // MatInputModule,
     RouterModule.forRoot([
       { path: '', redirectTo: 'albums', pathMatch: 'full' },
       { path: 'albums', component: AlbumIndexComponent },

@@ -38,10 +38,7 @@ export class AlbumsService {
   }
 
   get(id: number): Album {
-    for (const album of this.albums) {
-      if (album.id === id) {
-        return album;
-      }
-    }
+    /* Find an object in an array by one value */
+    return this.albums.find(album => album.id === id);
   }
 }

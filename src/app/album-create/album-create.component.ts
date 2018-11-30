@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Album } from '../album';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -18,9 +19,11 @@ export class AlbumCreateComponent implements OnInit {
   @Output()
   albumRemoved = new EventEmitter<Album>();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,
+              private title: Title) {}
 
   ngOnInit() {
+    this.title.setTitle('Boutique');
   }
 
   create(form: NgForm) {

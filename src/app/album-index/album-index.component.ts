@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 import { AlbumsService } from '../albums.service';
 import { LoggerService } from '../logger.service';
@@ -21,12 +22,14 @@ export class AlbumIndexComponent implements OnInit {
   constructor(private albumsService: AlbumsService,
               private loggerService: LoggerService,
               private router: Router,
+              private title: Title,
               @Inject(SERVER_URL_TOKEN) serverUrl: string) {
     console.log(serverUrl);
   }
 
   ngOnInit() {
     this.albums = this.albumsService.albums;
+    this.title.setTitle('Boutique');
   }
 
   showDetail(album: Album) {

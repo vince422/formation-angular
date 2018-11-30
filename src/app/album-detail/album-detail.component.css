@@ -17,3 +17,10 @@ img {
 .container {
   padding: 2px 16px;
 }
+
+button {
+  color: white;
+  font-weight: bold;
+  background-color: lightslategrey;
+  margin: 30px 5px 5px;
+}
