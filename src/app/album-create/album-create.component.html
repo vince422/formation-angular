@@ -1,7 +1,7 @@
 <form (submit)="create(albumForm)" #albumForm="ngForm">
   <div>
     <label for="album-create-title">Titre</label>
-    <input [(ngModel)]="newAlbum.title" type="text" id="album-create-title" name="title" #titleField="ngModel" pattern=".{2,}" required>
+    <input [(ngModel)]="newAlbum.title" type="text" id="album-create-title" name="title" #titleField="ngModel" pattern=".{2,}" required matNativeControl>
     <p *ngIf="titleField.invalid && titleField.touched" class="error">Merci de mettre un titre de 2 caractères minimum.</p>
   </div>
   <div>

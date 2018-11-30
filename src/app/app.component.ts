@@ -1,8 +1,4 @@
-import { Component, Inject } from '@angular/core';
-import { Album } from './album';
-import { AlbumsService } from './albums.service';
-import { LoggerService } from './logger.service';
-import { SERVER_URL_TOKEN } from './app.config';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -11,28 +7,6 @@ import { SERVER_URL_TOKEN } from './app.config';
 })
 export class AppComponent {
   title = 'Boutique';
-  albums: Album[];
-  currentAlbum: Album = undefined;
-  lastAlbum: Album;
 
-  constructor(albumsService: AlbumsService,
-              private loggerService: LoggerService,
-              @Inject(SERVER_URL_TOKEN) serverUrl: string) {
-    this.albums = albumsService.albums;
-  }
-
-  setCurrent(album: Album): void {
-    this.currentAlbum = album;
-  }
-
-  setCreated(album: Album): void {
-    this.albums.push(album);
-    this.lastAlbum = this.currentAlbum;
-    this.currentAlbum = album;
-  }
-
-  removeCreated(album: Album): void {
-    this.albums.splice(this.albums.indexOf(album), 1);
-    this.currentAlbum = this.lastAlbum;
-  }
+  constructor() {}
 }

@@ -1,0 +1,11 @@
+button {
+  color: white;
+  font-weight: bold;
+  background-color: lightslategrey;
+  margin: 5px;
+}
+
+button.active {
+  text-decoration: underline;
+  background-color: darkslategrey;
+}

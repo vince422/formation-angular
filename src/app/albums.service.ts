@@ -36,4 +36,12 @@ export class AlbumsService {
         console.log(err);
       });*/
   }
+
+  get(id: number): Album {
+    for (const album of this.albums) {
+      if (album.id === id) {
+        return album;
+      }
+    }
+  }
 }

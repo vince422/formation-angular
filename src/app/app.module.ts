@@ -2,8 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { InjectionToken, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule/*, MatFormFieldModule, MatInputModule*/ } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+
+import { AlbumIndexComponent } from './album-index/album-index.component';
 import { AlbumThumbComponent } from './album-thumb/album-thumb.component';
 import { AlbumDetailComponent } from './album-detail/album-detail.component';
 import { AlbumCreateComponent } from './album-create/album-create.component';
@@ -17,14 +24,26 @@ const SECOND_CONFIG = new InjectionToken('Une deuxième config');
 @NgModule({
   declarations: [
     AppComponent,
+    NavBarComponent,
     AlbumThumbComponent,
     AlbumDetailComponent,
-    AlbumCreateComponent
+    AlbumCreateComponent,
+    AlbumIndexComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    // BrowserAnimationsModule,
+    MatButtonModule,
+    // MatFormFieldModule,
+    // MatInputModule,
+    RouterModule.forRoot([
+      { path: '', redirectTo: 'albums', pathMatch: 'full' },
+      { path: 'albums', component: AlbumIndexComponent },
+      { path: 'album/:id', component: AlbumDetailComponent },
+      { path: 'create', component: AlbumCreateComponent }
+    ])
   ],
   providers: [
     LoggerService, // Equivalent : { provide: LoggerService, useClass: LoggerService } -- Fonctionnement de base

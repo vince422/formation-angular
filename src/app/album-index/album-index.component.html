@@ -1,0 +1,8 @@
+<div class="page">
+  <div class="thumbAlbum">
+    <app-album-thumb *ngFor="let album of albums"
+                     [album]="album"
+                     (albumSelected)="showDetail($event)">
+    </app-album-thumb>
+  </div>
+</div>

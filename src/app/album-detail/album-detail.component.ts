@@ -1,4 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { AlbumsService } from '../albums.service';
+
 import { Album } from '../album';
 
 @Component({
@@ -8,11 +12,16 @@ import { Album } from '../album';
 })
 export class AlbumDetailComponent implements OnInit {
 
-  @Input() album: Album;
+  album: Album;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute,
+              private albumsService: AlbumsService) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+        const id = params.get('id');
+        this.album = this.albumsService.get(+id);
+    });
   }
 
 }

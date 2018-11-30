@@ -3,7 +3,9 @@
   <h1>
     {{ title }}
   </h1>
-  <app-album-create (albumCreated)="setCreated($event)"
+  <app-nav-bar></app-nav-bar>
+  <router-outlet></router-outlet>
+  <!--<app-album-create (albumCreated)="setCreated($event)"
                     (albumRemoved)="removeCreated($event)"></app-album-create>
   <div class="thumbAlbum">
     <app-album-thumb *ngFor="let album of albums"
@@ -14,5 +16,5 @@
   </div>
   <div class="detailAlbum">
     <app-album-detail *ngIf="currentAlbum" [album]="currentAlbum"></app-album-detail>
-  </div>
+  </div>-->
 </div>

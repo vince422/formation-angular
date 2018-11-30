@@ -1,7 +1,9 @@
-<div class="card" *ngIf="album">
-  <img [src]="album.cover" [alt]="album.title" style="width:100%">
-  <div class="container">
-    <h4><b>{{ album.performer }} - {{ album.title }}</b></h4>
-    <p>{{ album.price | currency: 'EUR' }}</p>
+<div class="page">
+  <div class="card" *ngIf="album">
+    <img [src]="album.cover" [alt]="album.title" style="width:100%">
+    <div class="container">
+      <h4><b>{{ album.performer }} - {{ album.title }} ({{ album.year }})</b></h4>
+      <p>{{ album.price | currency: 'EUR' }}</p>
+    </div>
   </div>
 </div>
